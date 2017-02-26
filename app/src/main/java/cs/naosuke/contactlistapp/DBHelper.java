@@ -96,7 +96,9 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("name", contact.getName());
         values.put("phone", contact.getPhone());
 
-        row = db.update(TABLE_NAME, values, " where id = " + contact.getId(), null);
+        row = db.update(TABLE_NAME, values, "id = " + contact.getId(), null);
+
+
 
         db.close();
         return row;
