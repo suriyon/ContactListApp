@@ -19,7 +19,7 @@ public class UpdateContactActivity extends AppCompatActivity {
         initInstance();
 
         Intent intent = getIntent();
-        edtId.setText(intent.getIntExtra("id", 0) + "");
+        edtId.setText(String.valueOf(intent.getIntExtra("id", 0)));
         edtName.setText(intent.getStringExtra("name"));
         edtPhone.setText(intent.getStringExtra("phone"));
 
@@ -38,6 +38,7 @@ public class UpdateContactActivity extends AppCompatActivity {
                 DBHelper helper = new DBHelper(UpdateContactActivity.this);
 
                 helper.updateContact(contact);
+
 
                 finish();
             }
